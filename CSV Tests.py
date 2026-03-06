@@ -9,7 +9,7 @@ with sync_playwright() as p:
     firefox_browser = p.firefox.launch(headless=True)
     firefox_page = firefox_browser.new_page()
 
-    with open("C:/Users/danie/OneDrive/Desktop/users.csv", "r") as file:
+    with open("C:/Users/danie/Documents/QA Work/users.csv", "r") as file:
         reader = csv.DictReader(file) 
         rows = list(reader)
     print(f"Loaded {len(rows)} rows") # Print total row loaded from CSV
