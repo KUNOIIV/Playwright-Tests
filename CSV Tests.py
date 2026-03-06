@@ -10,26 +10,26 @@ with sync_playwright() as p:
     firefox_page = firefox_browser.new_page()
 
     with open("C:/Users/danie/OneDrive/Desktop/users.csv", "r") as file:
-        reader = csv.DictReader(file)
+        reader = csv.DictReader(file) 
         rows = list(reader)
-    print(f"Loaded {len(rows)} rows")
+    print(f"Loaded {len(rows)} rows") # Print total row loaded from CSV
 
     # Chrome test
     print("File opened, Chrome test")
     for i, row in enumerate(rows, 1):
         username = row.get('username', '').strip()
-        print(f"[{i}] Testing: '{username}' (role={row['role']}, pass={row['should_pass']})")
+        print(f"[{i}] Testing: '{username}' (role={row['role']}, pass={row['should_pass']})") # This is to current test details (username, role, expected pass/fail)
 
-        start = time.time()
+        start = time.time() # capture start time, this is to calculate how long login takes
         
-        chrome_page.goto("https://www.saucedemo.com/") #Demo site
+        chrome_page.goto("https://www.saucedemo.com/") # Demo site
         chrome_page.locator('#user-name').wait_for(state='visible', timeout=5000)
         chrome_page.fill('#user-name', username)
         chrome_page.locator('#password').wait_for(state='visible', timeout=5000)
         chrome_page.fill('#password', row['password'])
         chrome_page.click('#login-button')
         chrome_page.wait_for_timeout(3000)
-        print(f" Chrome: {username} login took {time.time() - start:.2f}s")
+        print(f" Chrome: {username} login took {time.time() - start:.2f}s") # Logging how it took for each user to try log in 
 
         error = chrome_page.locator('h3[data-test="error"]')
         if row['should_pass'] == 'yes':
@@ -39,8 +39,8 @@ with sync_playwright() as p:
             title = chrome_page.locator('[data-test="title"]').inner_text()
             print(f"  Title: '{title}'")
 
-            if row['expected_access'] == 'cart':
-                assert title == "Products"
+            if row['expected_access'] == 'cart':  
+                assert title == "Products" # Verifying successful redirect to inventory - "Products as title expected"
                 print("  ✓ Cart access OK")
 
             if row['role'] == 'admin':
@@ -50,7 +50,7 @@ with sync_playwright() as p:
                 assert "error" in chrome_page.content().lower()
                 print("  ✓ Guest blocked") #Guest blocked to add to cart for testing purposes
         else: 
-            assert error.is_visible(), f"No error for {username}"
+            assert error.is_visible(), f"No error for {username}" # If expected fail: check error message appears (login blocked as planned)
             print(f"  ✓ FAIL expected: {username} - {error.inner_text()}")
 
         # Long username (from login error)
@@ -69,14 +69,14 @@ with sync_playwright() as p:
             error_dup = chrome_page.locator('h3[data-test="error"]')
 
             if error_dup.is_visible():
-                print(f" Nice, Chrome: Duplicate blocked - good (expected for secure site)")
+                print(f" ! Chrome: Duplicate blocked - good (expected for secure site)")
             else:
-                print(f" Not Nice, Chrome: Duplicate allowed: potentional security holes!")
+                print(f" x Chrome: Duplicate allowed: potentional security holes!")
 
     # Firefox (mirror)
     print("File opened, Firefox test")
-    for i, row in enumerate(rows, 1):
-        username = row.get('username', '').strip()
+    for i, row in enumerate(rows, 1): 
+        username = row.get('username', '').strip() 
         print(f"[{i}] Testing: '{username}' (role={row['role']}, pass={row['should_pass']})")
 
         start = time.time()
@@ -90,7 +90,7 @@ with sync_playwright() as p:
         firefox_page.fill('#password', row['password'])
         firefox_page.click('#login-button')
         firefox_page.wait_for_timeout(3000)
-        print(f" Firefox: {username} login took {time.time() - start:.2f}s")
+        print(f" Firefox: {username} login took {time.time() - start:.2f}s") 
 
         error = firefox_page.locator('h3[data-test="error"]')
 
@@ -128,9 +128,9 @@ with sync_playwright() as p:
             firefox_page.wait_for_timeout(3000)
             error_dup = firefox_page.locator('h3[data-test="error"]')
             if error_dup.is_visible():
-                print(f" Nice, Chrome: Duplicate blocked - good (expected for secure site)")
+                print(f" ! Chrome: Duplicate blocked - good (expected for secure site)")
             else:
-                print(f" Not Nice, Chrome: Duplicate allowed: potentional security holes!")
+                print(f" x Chrome: Duplicate allowed: potentional security holes!")
 
     chrome_browser.close()
     firefox_browser.close()
