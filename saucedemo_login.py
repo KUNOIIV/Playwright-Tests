@@ -1,5 +1,7 @@
 from playwright.sync_api import sync_playwright
 
+# End to end Source Demo test: login > cart loop (CSS) > fill > logout
+
 with sync_playwright() as p:
     browser = p.chromium.launch(headless=False, slow_mo=500)
     page = browser.new_page()

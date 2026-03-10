@@ -1,5 +1,7 @@
 from playwright.sync_api import sync_playwright
 
+# Tests valid login with correct credentials (Playwright form submit)
+
 with sync_playwright() as p:
     browser = p.chromium.launch(headless=False, slow_mo=500)
     page = browser.new_page()

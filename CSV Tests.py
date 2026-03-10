@@ -2,6 +2,8 @@ import csv
 import time
 from playwright.sync_api import sync_playwright
 
+# This script is to test logins with CSV data
+
 with sync_playwright() as p:
     chrome_browser = p.chromium.launch(headless=True)  # Visible debug
     chrome_page = chrome_browser.new_page()
@@ -48,7 +50,7 @@ with sync_playwright() as p:
                 print("  ✓ Chrome: Admin access OK")  #Visual_user has admin rights
             elif row['role'] == 'guest':
                 assert "error" in chrome_page.content().lower()
-                print("  ✓ Guest blocked") #Guest blocked to add to cart for testing purposes
+                print("  ✓ Guest blocked") # Guest blocked to add to cart for testing purposes
         else: 
             assert error.is_visible(), f"No error for {username}" # If expected fail: check error message appears (login blocked as planned)
             print(f"  ✓ FAIL expected: {username} - {error.inner_text()}")

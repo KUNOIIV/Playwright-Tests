@@ -1,6 +1,8 @@
 import requests
 import pytest
 
+# Full API suite: tests endpoints (GET/POST/DELETE), asserts status codes + JSON data
+
 BASE_URL = "https://jsonplaceholder.typicode.com/"  
 
 def test_get_users(): #Test GET: fetch lists of users

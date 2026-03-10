@@ -1,5 +1,7 @@
 from playwright.sync_api import sync_playwright
 
+#Invalid login test - verifies server rejects bad credentials (status 401, shows "Invalid alert")
+
 with sync_playwright() as p:
     browser = p.chromium.launch(headless=False, slow_mo=500)
     page = browser.new_page()
