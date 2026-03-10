@@ -1,5 +1,5 @@
 import requests
-import pytest
+import pytest 
 
 # Full API suite: tests endpoints (GET/POST/DELETE), asserts status codes + JSON data
 

@@ -2,7 +2,7 @@ import csv
 import time
 from playwright.sync_api import sync_playwright
 
-# This script is to test logins with CSV data
+# This script is to test logins with CSV data 
 
 with sync_playwright() as p:
     chrome_browser = p.chromium.launch(headless=True)  # Visible debug

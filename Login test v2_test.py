@@ -1,4 +1,4 @@
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright 
 
 # Tests valid login with correct credentials (Playwright form submit)
 

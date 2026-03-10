@@ -1,4 +1,4 @@
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright 
 
 # End to end Source Demo test: login > cart loop (CSS) > fill > logout
 
