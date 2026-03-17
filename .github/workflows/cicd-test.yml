@@ -31,3 +31,7 @@ jobs:
           cd Tests
           ls -la
           pytest -v
+
+      - name: Install dependencies
+        run: |
+         pip install pytest requests
