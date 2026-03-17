@@ -10,8 +10,6 @@ longuser_abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrs
 standard_user,superlongpasswordwith100chars12345678901234567890123456789012345678901234567890,no,standard,error,no,no,yes,no,yes
 invalid@noemail,secret_sauce,no,standard,error,no,no,no,yes,no
 admin_user04,secret_sauce,no,admin,error,no,no,no,no,no  # Invalid username
-<<<<<<< HEAD
 guest_user,secret_sauce,no,guest,error,no,no,no,no,no  # Invalid username
-=======
 guest_user,secret_sauce,no,guest,error,no,no,no,no,no  # Invalid username
->>>>>>> c98f109e52e9d005d58ad409ac2279c1141ad59c
+
