@@ -2,7 +2,7 @@ from playwright.sync_api import sync_playwright
 import pytest
 
 # Tests valid login with correct credentials (Playwright form submit)
-def test_login_test_v2_test():
+def test_login_test_v2():
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False, slow_mo=500)
         page = browser.new_page()
