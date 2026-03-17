@@ -23,4 +23,7 @@ jobs:
           pip install playwright
           playwright install --with-deps chromium firefox
       - name: Run tests
-        run:  python "CSV Tests.py" python "Bad login test with wrong creds.py" python "login test v2_test.py" python "loop control structure.py" python "saucedemo_login.py" 
+        run: |
+          cd Tests
+          ls -la  
+          pytest -v
