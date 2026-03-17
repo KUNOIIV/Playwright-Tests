@@ -26,4 +26,4 @@ jobs:
         run: |
           cd Tests
           ls -la
-          pytest -v --browser chromium --headed false
+          pytest -v --browser chromium --headed
