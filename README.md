@@ -23,15 +23,15 @@ Data-driven (CSV), full CRUD API checks, auto-runs on every push.
 ## Screenshots
 Chrome Cross Browser test:
 
-https://github.com/KUNOIIV/Playwright-Tests/blob/main/Chrome%20Cross%20Browser%20CSV%20test.png
+[https://github.com/KUNOIIV/Playwright-Tests/blob/main/Chrome%20Cross%20Browser%20CSV%20test.png](https://github.com/KUNOIIV/Playwright-Tests/blob/main/Screenshots%20and%20Videos/Chrome%20Cross%20Browser%20CSV%20test.png)
 
-https://github.com/KUNOIIV/Playwright-Tests/blob/main/Chrome%20Cross%20Browser%20CSV%20test%20(2)%20.png (part 2)
+[https://github.com/KUNOIIV/Playwright-Tests/blob/main/Chrome%20Cross%20Browser%20CSV%20test%20(2)%20.png](https://github.com/KUNOIIV/Playwright-Tests/blob/main/Screenshots%20and%20Videos/Chrome%20Cross%20Browser%20CSV%20test%20(2)%20.png) (part 2)
 
 Firefox Cross Browswer test:
 
-https://github.com/KUNOIIV/Playwright-Tests/blob/main/Firefox%20Cross%20Browser%20CSV%20test.png
+[https://github.com/KUNOIIV/Playwright-Tests/blob/main/Firefox%20Cross%20Browser%20CSV%20test.png](https://github.com/KUNOIIV/Playwright-Tests/blob/main/Screenshots%20and%20Videos/Firefox%20Cross%20Browser%20CSV%20test.png)
 
-https://github.com/KUNOIIV/Playwright-Tests/blob/main/Firefox%20Cross%20Browser%20CSV%20test%20(2).png
+[https://github.com/KUNOIIV/Playwright-Tests/blob/main/Firefox%20Cross%20Browser%20CSV%20test%20(2).png](https://github.com/KUNOIIV/Playwright-Tests/blob/main/Screenshots%20and%20Videos/Firefox%20Cross%20Browser%20CSV%20test%20(2).png)
 
 CI/CD Output results (First didn't succeed then made fixes to fix it. Now everytime pushing a new file drone will pass):
 
@@ -39,11 +39,11 @@ https://github.com/KUNOIIV/Playwright-Tests/blob/main/CICD%20Test%20output.png
 
 Loop control structure adding items in cart:
 
-https://github.com/KUNOIIV/Playwright-Tests/blob/main/Loop%20control%20structure%20add%20inventory%20to%20cart%20.png
+[https://github.com/KUNOIIV/Playwright-Tests/blob/main/Loop%20control%20structure%20add%20inventory%20to%20cart%20.png](https://github.com/KUNOIIV/Playwright-Tests/blob/main/Screenshots%20and%20Videos/Loop%20control%20structure%20add%20inventory%20to%20cart%20.png)
 
 API test:
 
-https://github.com/KUNOIIV/Playwright-Tests/blob/main/API%20test%20screenshot.png
+[https://github.com/KUNOIIV/Playwright-Tests/blob/main/API%20test%20screenshot.png](https://github.com/KUNOIIV/Playwright-Tests/blob/main/Screenshots%20and%20Videos/API%20test%20screenshot.png)
 
 ## Videos
 Playwright-Loop-Control-Add-Remove-Cart-Items:
