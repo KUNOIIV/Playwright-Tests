@@ -4,7 +4,7 @@ from playwright.sync_api import sync_playwright
 import pytest
 
 # This script is to test logins with CSV data
-def test_CSV_Tests():
+def test_CSV_Test():
     with open("users.csv", "r") as file:
         reader = csv.DictReader(file)
         rows = list(reader)
@@ -152,4 +152,4 @@ def test_CSV_Tests():
 
 # RUN AS PLAIN PYTHON (non-pytest)
 if __name__ == "__main__":
-    test_CSV_Tests()
+    test_CSV_Test()

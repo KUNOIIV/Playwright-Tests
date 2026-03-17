@@ -4,7 +4,7 @@ import pytest
 #Invalid login test - verifies server rejects bad credentials (status 401, shows "Invalid alert")
 def test_Bad_login_test_with_wrong_creds():
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False, slow_mo=500)
+        browser = p.chromium.launch(headless=True, slow_mo=500)
         page = browser.new_page()
         page.goto("https://www.saucedemo.com/")
     

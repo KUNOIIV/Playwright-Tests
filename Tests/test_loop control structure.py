@@ -4,7 +4,7 @@ import pytest
 # Cart addition test - CSS locators to click 'Add to cart' buttons
 def test_loop_control_structure():
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False, slow_mo=500) # This is to see what is going on in the browser
+        browser = p.chromium.launch(headless=True, slow_mo=500) # This is to see what is going on in the browser
         page = browser.new_page()
     
         page.goto("https://www.saucedemo.com/")
