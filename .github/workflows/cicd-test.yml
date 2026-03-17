@@ -17,10 +17,13 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'  
-      - name: Install Playwright
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install playwright
+          pip install playwright pytest pytest-playwright requests
           playwright install --with-deps chromium firefox
       - name: Run tests
-        run:  python "CSV Tests.py" python "Bad login test with wrong creds.py" python "login test v2_test.py" python "loop control structure.py" python "saucedemo_login.py" 
+        run: |
+          cd Tests
+          ls -la
+          pytest -v --browser chromium --headed
