@@ -22,9 +22,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install playwright pytest pytest-playwright requests
           playwright install --with-deps chromium firefox
+      - name: Install project in editable mode
+        run: pip install -e 
+        working-directory: .
       - name: Run tests
-        run: |
-         echo $PWD 
-         ls -la
-         python -m pytest Tests/ -v
-         working-directory: .
+        run: python -m pytest Tests/ -v
+        working-directory: .
