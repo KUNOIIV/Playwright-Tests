@@ -23,7 +23,5 @@ jobs:
           pip install playwright pytest pytest-playwright requests
           playwright install --with-deps chromium firefox
       - name: Run tests
-        run: |
-          cd Tests
-          ls -la
-          pytest -v --browser chromium --headed
+        run: python -m pytest Tests/ -v
+        working-directory: . 
