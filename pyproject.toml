@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "playwright-tests"  # Your package name
+name = "playwright-tests"
 version = "0.1.0"
 description = "Playwright test suite"
 dependencies = [
@@ -12,8 +12,11 @@ dependencies = [
     "pytest-playwright",
 ]
 
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pages*"]  # Only package your pages/ module
+exclude = ["Tests*"]  # Skip Tests/ dir
+
 [tool.pytest.ini_options]
-# testpaths = ["tests"]  # Adjust paths
-# addopts = "--headed"   # Optional
-testpaths = ["pages"]     # Per your comment
-# exclude = ["Tests"]   # If needed
+testpaths = ["Tests", "pages"]  # Or wherever your tests live
+addopts = "-v --headed"         # Optional: verbose, headed browser
