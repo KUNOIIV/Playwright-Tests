@@ -1,2 +1,4 @@
-version = "0.1"
-dependencies = []  # add if needed, like "playwright"
+version = "0.1.0"
+dependencies = ["playwright", "pytest", "pytest-playwright" "."]
+include = # only discover stuff under pages/
+exclude = # skip Tests folder
