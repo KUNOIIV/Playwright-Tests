@@ -1,4 +1,7 @@
 #Page Object Model - the point of this, is to make the code more cleaner and shorter 
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from pages.login_page import LoginPage
 from pages.inventory_page import InventoryPage
