@@ -10,7 +10,8 @@ from playwright.sync_api import sync_playwright, Page, expect
 
 def test_login():
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False, slow_mo=1000) #Launch Chrome browser (visible, slow-mo for debug)
+        browser = p.chromium.launch(headless=True, slow_mo=1000) #Launch Chrome browser (visible, slow-mo for debug)
+        #added Headless=True because in CI/CD it would fail with Headless=false but demo purposes will change to headless=False
         page = browser.new_page() 
         login = LoginPage(page) #Instantiate LoginPage – pulls methods from login_page.py
         login.goto()#Navigate to base URL (https://www.saucedemo.com/)
