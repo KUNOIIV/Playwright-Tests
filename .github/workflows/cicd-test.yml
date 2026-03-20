@@ -24,9 +24,19 @@ jobs:
           python -m pip install --upgrade pip
           pip install playwright pytest pytest-playwright
           playwright install --with-deps chromium firefox
+        working-directory: .
 
-      - name: Install project in editable mode (for imports like 'from pages...')
+      - name: Install project editable (makes 'pages' visible everywhere)
         run: pip install -e .
+        working-directory: .
+
+      - name: Debug paths (optional, remove later)
+        run: |
+          pwd
+          ls -la
+          python -c "import sys; print(sys.path)"
+        working-directory: .
 
       - name: Run tests
         run: python -m pytest Tests/ -v
+        working-directory: .
