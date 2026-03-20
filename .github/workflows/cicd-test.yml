@@ -23,5 +23,5 @@ jobs:
           pip install playwright pytest pytest-playwright requests
           playwright install --with-deps chromium firefox
       - name: Run tests
-        run: pytest Tests/ -v
+        run: python -m pytest Tests/ -v
         working-directory: . 
