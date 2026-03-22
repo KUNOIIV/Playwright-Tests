@@ -11,10 +11,9 @@ Data-driven (CSV), full CRUD API checks, auto-runs on every push.
 - Full E2E regression: Login → sort → add/remove cart → checkout → logout + invalid creds.  
 
 ## Setup & Run
-1. Clone repo  
-2. pip install -r requirements.txt (add your deps: playwright, pytest, requests)  
-3. pytest — local run  
-4. Push — GitHub Actions fires auto  
+1. Clone repo    
+2. Run locally in cmd - pytests Tests/ -v  
+3. Push — GitHub Actions fires auto  
 
 ## Key Lessons Learned
 - Relative paths > absolute (OneDrive trap).  
