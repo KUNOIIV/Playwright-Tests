@@ -6,7 +6,9 @@ Data-driven (CSV), full CRUD API checks, auto-runs on every push.
 ## What it does
 - UI Smoke Tests: Playwright scripts (login, CSV data-driven) — green on push.  
 - API Tests: GET/POST/DELETE on jsonplaceholder (fake CRUD) — asserts status codes, JSON keys.  
-- CI/CD: Runs all tests in cloud (no local server needed).  
+- CI/CD: Runs all tests in cloud (no local server needed).
+- Page Object Model (POM): Clean, reusable Pages
+- Full E2E regression: Login → sort → add/remove cart → checkout → logout + invalid creds.  
 
 ## Setup & Run
 1. Clone repo  
