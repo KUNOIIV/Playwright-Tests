@@ -22,6 +22,8 @@ jobs:
 
     - name: Install browsers
       run: playwright install --with-deps
+    
+    - run: pytest Tests/ -v -s --headed=false 
 
     - name: Run tests
       run: pytest Tests/ -v 
