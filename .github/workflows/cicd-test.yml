@@ -23,10 +23,5 @@ jobs:
       - name: Install browsers
         run: playwright install --with-deps
 
-      - name: Run tests (headless)
-        run: pytest Tests/ -v -s
-
       - name: Run tests
-        run: pytest Tests/ -v 
-        env:
-          CI: true 
+        run: pytest Tests/ -v -s
