@@ -6,13 +6,12 @@ from playwright.sync_api import sync_playwright, Page, expect
 
 def test_login():
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True, slow_mo=1000) #Launch Chrome browser (visible, slow-mo for debug)
+        browser = p.chromium.launch(headless=True, slow_mo=3000) #Launch Chrome browser (visible, slow-mo for debug)
         #added Headless=True because in CI/CD it would fail with Headless=false but demo purposes will change to headless=False
         page = browser.new_page() 
         login = LoginPage(page) #Instantiate LoginPage – pulls methods from login_page.py
         login.goto()#Navigate to base URL (https://www.saucedemo.com/)
-        
-        
+             
         login.login("standard_user", "secret_sauce")
         #Login with valid credentials - the right credentials goes to the inventory page
         
@@ -40,7 +39,7 @@ def test_login():
         expect(page.locator(bolt_t_shirt_item)).to_be_visible(timeout=15000)
         expect(page.locator(onesie_item)).to_be_visible(timeout=15000)
         #Created page.locator to make sure it searches the slug in the varible
-
+        
         inventory.sort_by_price_low_to_high()
         inventory.sort_by_z_to_a()
         inventory.add_multi_to_cart()

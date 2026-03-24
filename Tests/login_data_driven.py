@@ -21,7 +21,7 @@ def test_login_data_driven():
             role = row.get('role', 'unknown')
             should_pass = row['should_pass']
             print(f"[{i}] Testing '{username}' (role={role}, expect={should_pass})") 
-            # This is to current test details (username, role, expected pass/fail)
+            # This is current test details (username, role, expected pass/fail)
 
             start = time.time() # capture start time, this is to calculate how long login takes
 
@@ -97,7 +97,6 @@ def test_login_data_driven():
             
             firefox_page.goto("https://www.saucedemo.com/")
             firefox_page.wait_for_load_state('domcontentloaded')
-            
             firefox_page.locator('#user-name').wait_for(state='visible', timeout=5000)
             firefox_page.fill('#user-name', username)
             firefox_page.locator('#password').wait_for(state='visible', timeout=5000)
