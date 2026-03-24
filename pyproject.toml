@@ -7,17 +7,18 @@ name = "playwright-tests"
 version = "0.1.0"
 description = "Playwright test suite"
 dependencies = [
-    "playwright",
-    "pytest",
-    "pytest-playwright",
+  "playwright",
+  "pytest",
+  "pytest-playwright",
+  "pytest-base-url",
 ]
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["pages*"]  # Only package your pages/ module
-exclude = ["Tests*"]  # Skip Tests/ dir
+include = ["pages*"]
+exclude = ["Tests*"]
 
 [tool.pytest.ini_options]
-testpaths = ["Tests", "pages"]  # Or wherever your tests live
-playwright_headless = true  # Headless browsers (CI default anyway)
-addopts = "--headed=false"
+testpaths = ["Tests"]
+playwright_headless = true  # ← Headless magic (no CLI needed)
+addopts = "-v -s"           # ← Clean: verbose + stream only
