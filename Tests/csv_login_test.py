@@ -4,7 +4,7 @@ import csv
 def test_csv_login(page):
     login = LoginPage(page)  
 
-    with open("users.csv", "r") as file: 
+    with open("Tests/users.csv", "r") as file: 
         reader = csv.DictReader(file)
         rows = list(reader) 
         print(f"Loaded {len(rows)} rows (browser={page.context.browser.browser_type.name})") #Cross Broswer test 

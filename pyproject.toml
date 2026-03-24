@@ -20,5 +20,4 @@ exclude = ["Tests*"]
 
 [tool.pytest.ini_options]
 testpaths = ["Tests"]
-playwright_headless = true  # ← Headless magic (no CLI needed)
-addopts = "-v -s"           # ← Clean: verbose + stream only
+addopts = "-v -s"
