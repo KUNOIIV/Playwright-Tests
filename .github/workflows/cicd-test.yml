@@ -10,22 +10,23 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.12'
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
 
-    - name: Install project + deps
-      run: pip install -e .
+      - name: Install project + deps
+        run: pip install -e .
 
-    - name: Install browsers
-      run: playwright install --with-deps
-    
-    - run: pytest Tests/ -v -s --headed=false 
+      - name: Install browsers
+        run: playwright install --with-deps
 
-    - name: Run tests
-      run: pytest Tests/ -v 
-      env:
-        CI: true 
+      - name: Run tests (headless)
+        run: pytest Tests/ -v -s --headed=false
+
+      - name: Run tests
+        run: pytest Tests/ -v 
+        env:
+          CI: true 
