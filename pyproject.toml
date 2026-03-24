@@ -19,7 +19,5 @@ exclude = ["Tests*"]  # Skip Tests/ dir
 
 [tool.pytest.ini_options]
 testpaths = ["Tests", "pages"]  # Or wherever your tests live
-
-[tool.pytest.ini_options]
 playwright_headless = true  # Headless browsers (CI default anyway)
 addopts = "--headed=false"
