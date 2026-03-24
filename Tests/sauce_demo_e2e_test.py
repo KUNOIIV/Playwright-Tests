@@ -3,10 +3,7 @@ import pytest
 
 # End to end Source Demo test: login > cart loop (CSS) > fill > logout
 
-def test_saucedemo_logic():
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True, slow_mo=500)
-        page = browser.new_page()
+def test_saucedemo_logic(page):
         page.goto("https://www.saucedemo.com/")
 
     # Login
@@ -62,5 +59,3 @@ def test_saucedemo_logic():
         print("After logout:", page.title())
 
         assert page.url.endswith("/"), "Logout failed - not back at login page"
-
-        browser.close()
