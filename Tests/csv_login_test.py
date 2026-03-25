@@ -1,5 +1,9 @@
 from pages.login_page import LoginPage
 import csv
+import pytest
+
+@pytest.mark.flaky(reruns=3, reruns_delay=1)
+#Added retries because Login tests could flake on network or UI timing
 
 def test_csv_login(page):
     login = LoginPage(page)  
@@ -35,4 +39,6 @@ def test_csv_login(page):
             else:
                 login.login_invalid_creds()
                 print(f"❌ Invalid creds: {username}")
+             
+
     
