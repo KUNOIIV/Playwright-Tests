@@ -2,6 +2,7 @@
 from playwright.sync_api import Page, expect
 
 class LoginPage:
+    
     def __init__(self, page: Page):
         self.page = page
         self.timeout = 15000 #Constant - telling Playwright slow down, take 30 seconds to locate or wait for a selector
@@ -46,3 +47,4 @@ class LoginPage:
     def login_username_required(self):
         expect(self.page.locator(".error-message-container")).to_have_text("Epic sadface: Username is required", timeout=self.timeout)
     #If username and password is blank, Playwright to verify the error message
+    
