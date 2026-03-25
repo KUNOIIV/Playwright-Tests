@@ -8,7 +8,8 @@ Data-driven (CSV), full CRUD API checks, auto-runs on every push.
 - API Tests: GET/POST/DELETE on jsonplaceholder (fake CRUD) — asserts status codes, JSON keys.  
 - CI/CD: Runs all tests in cloud (no local server needed).
 - Page Object Model (POM): Clean, reusable Pages
-- Full E2E regression: Login → sort → add/remove cart → checkout → logout + invalid creds.  
+- Full E2E regression: Login → sort → add/remove cart → checkout → logout + invalid creds.
+- Reports: HTML summary included
 
 ## Setup & Run
 1. Clone repo    
